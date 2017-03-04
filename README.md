@@ -2,8 +2,8 @@
 The project is done by intuition that personalization of using yelp's data for improve personal experience in dinning out.
 
 ##Project Language
-Java EE
-JavaScript
+1. Java EE
+2. JavaScript
 
 ##Database
 MySQL
@@ -12,5 +12,5 @@ MySQL
 Recommendation Algorithm
 
 ##Front End
-CSS
-JavaScript
+1. CSS
+2. JavaScript
