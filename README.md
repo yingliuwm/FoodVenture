@@ -6,8 +6,8 @@ The project is done by intuition that personalization of using yelp's data for i
 2. JavaScript
 
 ##Database
-1.	MySQL	//for storing user data
-2.	MongoDB //for storing yelp data
+###MySQL	
+###MongoDB 
 
 ##Core Algorithem
 Recommendation Algorithm
