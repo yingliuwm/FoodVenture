@@ -1,0 +1,41 @@
+package db;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Restaurant;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import yelp.YelpAPI;
+
+public class MySQLDBConnection implements DBConnection {
+    // May ask for implementation of other methods. Just add empty body to them. 
+
+    @Override
+    public JSONArray searchRestaurants(String userId, double lat, double lon, String term) {
+   	 try {
+                             // Connect to Yelp API
+   		 YelpAPI api = new YelpAPI();
+   		 JSONObject response = new JSONObject(
+   				 api.searchForBusinessesByLocation(lat, lon));
+   		 JSONArray array = (JSONArray) response.get("businesses");
+
+   		 List<JSONObject> list = new ArrayList<>();
+
+   		 for (int i = 0; i < array.length(); i++) {
+   			 JSONObject object = array.getJSONObject(i);
+                                            // Clean and purify
+   			 Restaurant restaurant = new Restaurant(object);
+                                            // return clean restaurant objects
+   			 JSONObject obj = restaurant.toJSONObject();
+   			 list.add(obj);
+   		 }
+   		 return new JSONArray(list);
+   	 } catch (Exception e) {
+   		 System.out.println(e.getMessage());
+   	 }
+   	 return null;
+    }
+}
