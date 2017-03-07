@@ -84,22 +84,23 @@ public class SearchRestaurants extends HttpServlet {
 		//		out.flush();
 		//		out.close();
 
-//				JSONArray array = new JSONArray();
-//				try {
-//					if (request.getParameterMap().containsKey("user_id")
-//							&& request.getParameterMap().containsKey("lat")
-//							&& request.getParameterMap().containsKey("lon")) {
-//						String userId = request.getParameter("user_id");
-//						double lat = Double.parseDouble(request.getParameter("lat"));
-//						double lon = Double.parseDouble(request.getParameter("lon"));
-//						// return some fake restaurants
-//						array.put(new JSONObject().put("name", "Panda Express"));
-//						array.put(new JSONObject().put("name", "Hong Kong Express"));
-//					}
-//				} catch (JSONException e) {
-//					e.printStackTrace();
-//				}
-//				RpcParser.writeOutput(response, array);
+		//actual production code
+		//		JSONArray array = new JSONArray();
+		//		try {
+		//			if (request.getParameterMap().containsKey("user_id")
+		//					&& request.getParameterMap().containsKey("lat")
+		//					&& request.getParameterMap().containsKey("lon")) {
+		//				String userId = request.getParameter("user_id");
+		//				double lat = Double.parseDouble(request.getParameter("lat"));
+		//				double lon = Double.parseDouble(request.getParameter("lon"));
+		//				// return some fake restaurants
+		//				array.put(new JSONObject().put("name", "Panda Express"));
+		//				array.put(new JSONObject().put("name", "Hong Kong Express"));
+		//			}
+		//		} catch (JSONException e) {
+		//			e.printStackTrace();
+		//		}
+		//		RpcParser.writeOutput(response, array);
 
 		//update to version with DBConnection
 		JSONArray array = new JSONArray();

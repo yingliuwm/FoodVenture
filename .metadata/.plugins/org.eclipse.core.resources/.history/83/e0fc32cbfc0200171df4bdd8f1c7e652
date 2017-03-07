@@ -157,7 +157,6 @@ public class MySQLDBConnection implements DBConnection {
 				statement.setString(7, fullAddress);
 				statement.setDouble(8, latitude);
 				statement.setDouble(9, longitude);
-				statement.setString(10, imageUrl);
 				statement.setString(11, url);
 				statement.execute();
 				// Perform filtering if term is specified.
