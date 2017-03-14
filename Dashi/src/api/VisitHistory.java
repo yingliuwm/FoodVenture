@@ -39,7 +39,7 @@ public class VisitHistory extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-                                            DBConnection connection = new MySQLDBConnection();
+			DBConnection connection = new MySQLDBConnection();
 			JSONArray array = null;
 			// allow access only if session exists
                                            /*

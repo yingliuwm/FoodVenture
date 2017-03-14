@@ -18,12 +18,12 @@ function init() {
   $('fav-btn').addEventListener('click', loadFavoriteRestaurants);
   $('recommend-btn').addEventListener('click', loadRecommendedRestaurants);
   
-  // validateSession();
+  validateSession();
   
-  onSessionValid({
-	  user_id: '1111',
-	  name: 'John Smith'
-  });
+//  onSessionValid({
+//	  user_id: '1111',
+//	  name: 'John Smith'
+//  });
 }
 
 /**
@@ -106,10 +106,34 @@ function onPositionUpdated(position) {
   loadNearbyRestaurants();
 }
 
+//function onLoadPositionFailed() {
+//  console.warn('navigator.geolocation is not available');
+//  loadNearbyRestaurants();
+//}
 function onLoadPositionFailed() {
-  console.warn('navigator.geolocation is not available');
-  loadNearbyRestaurants();
+	  console.warn('navigator.geolocation is not available');
+	  getLocationFromIP();
 }
+
+function getLocationFromIP() {
+	  // Get location from http://ipinfo.io/json
+	  var url = 'http://ipinfo.io/json'
+	  var req = null;
+	  ajax('GET', url, req,
+	    function (res) {
+	      var result = JSON.parse(res);
+	      if ('loc' in result) {
+	        var loc = result.loc.split(',');
+	        lat = loc[0];
+	        lng = loc[1];
+	      } else {
+	        console.warn('Getting location by IP failed.');
+	      }
+	      loadNearbyRestaurants();
+	    }
+	  );
+	}
+
 
 //-----------------------------------
 //  Login

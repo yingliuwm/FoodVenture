@@ -13,7 +13,7 @@ public class DBYelpImport {
 
     public static void main(String[] args) {
    	 try {
-                        // Ensure the driver is imported.
+         // Ensure the driver is imported.
    		 Class.forName("com.mysql.jdbc.Driver").newInstance();
    		 Connection conn = null;
 
