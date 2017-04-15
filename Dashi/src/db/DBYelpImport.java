@@ -72,7 +72,8 @@ public class DBYelpImport {
 
    		 // Step 3: insert data
    		 // Create a fake user
-   		 sql = "INSERT INTO users " + "VALUES (\"1111\", \"3229c1097c00d497a0fd282d586be050\", \"John\", \"Smith\")";
+    	 sql = "INSERT INTO users " + "VALUES (\"1111\", \"3229c1097c00d497a0fd282d586be050\", \"John\", \"Smith\")";
+   		 
    		 System.out.println("\nDBYelpImport executing query:\n" + sql);
    		 stmt.executeUpdate(sql);
    		 
