@@ -23,3 +23,7 @@ Recommendation Algorithm
 
 ## Server
 #### Amazon Web Service EC2
+
+####April 19th 2017
+For usage of the database, make sure MySQL database is runing under port as specified in DBUtil.java
+Run DBYelpimport.java as java application to import the database schema.
